@@ -76,8 +76,8 @@ def weather_etl_pipeline():
     # Define task dependencies
     weather_data = extract_weather_data()
     transformed = transform_weather_data(weather_data)
-    load_weather_data(transformed)
-    wait_for_api >> extract_weather_data()
+   
+    wait_for_api >>weather_data>>transformed>>load_weather_data(transformed)
 
 # Instantiate DAG
 weather_etl_pipeline()
