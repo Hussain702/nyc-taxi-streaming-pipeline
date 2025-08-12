@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fct_taxi_trips
+    description: "Detailed taxi trip data"
+    tests:
+      - not_null:
+          column_name: pickup_datetime
+      - relationships:
+          to: ref('dim_payment_type')
+          field: payment_type_id

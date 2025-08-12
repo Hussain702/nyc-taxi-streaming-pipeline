@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: staging
+    description: "Raw source tables loaded into Synapse from external data sources"
+    database: datatricksdedicated
+    schema: dbo
+    tables:
+      - name: Staging_ny_taxi
+        description: "Raw NYC taxi trip data as provided by TLC"
+        columns:
+          - name: VendorID
+            description: "Taxi company or provider ID"
+          - name: tpep_pickup_datetime
+            description: "Trip pickup timestamp"
+          - name: tpep_dropoff_datetime
+            description: "Trip dropoff timestamp"
