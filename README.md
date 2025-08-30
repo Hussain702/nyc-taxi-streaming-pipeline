@@ -34,29 +34,29 @@ git clone https://github.com/your-username/nyc-taxi-streaming-pipeline.git
 cd nyc-taxi-streaming-pipeline
   ```
 
-## #Start Services with Docker
-docker-compose up -d
-
+### 2️⃣Start Services with Docker
+```bash
+   docker-compose up -d
+```
 
 This starts:
 
-Kafka broker
+- Kafka broker
+- Flink (JobManager + TaskManager)
+- PostgreSQL
+- PGAdmin
 
-Flink (JobManager + TaskManager)
+### 3️⃣ Run Producer (send taxi trip events to Kafka)
+- cd src/producers
+- python producer.py
 
-PostgreSQL
-
-PGAdmin
-
-3️⃣ Run Producer (send taxi trip events to Kafka)
-cd src/producers
-python producer.py
-
-4️⃣ Submit Flink Job (consume + transform + write to Postgres)
+### 4️⃣ Submit Flink Job (consume + transform + write to Postgres)
+``` bash
 docker cp src/job/taxi_job.py flink-jobmanager:/opt/flink/usrlib/
 docker exec -it flink-jobmanager ./bin/flink run -py /opt/flink/usrlib/taxi_job.py
-
-📂 Project Structure
+```
+### 📂 Project Structure
+```bash
 nyc-taxi-streaming-pipeline/
 │── docker-compose.yml      # Service definitions
 │── src/
@@ -67,40 +67,26 @@ nyc-taxi-streaming-pipeline/
 │── scripts/
 │   └── create_tables.sql   # PostgreSQL schema
 │── README.md               # Documentation
+````
 
-📊 Example Table Schema
-CREATE TABLE taxi_events(
-    lpep_pickup_datetime TIMESTAMP,
-    lpep_dropoff_datetime TIMESTAMP,
-    PULocationID INT,
-    DOLocationID INT,
-    passenger_count INT,
-    trip_distance DOUBLE PRECISION,
-    tip_amount DOUBLE PRECISION
-);
 
-✅ Features
+### ✅ Features
 
-Real-time data ingestion
+- Real-time data ingestion
+- Stream transformations with PyFlink
+- Storage into PostgreSQL
+- Easily extensible for BI tools
 
-Stream transformations with PyFlink
+### 📌 Future Improvements
 
-Storage into PostgreSQL
+- Add dbt transformations in Postgres
+- Integrate Apache Superset / Power BI for visualization
+- Deploy to cloud (AWS/GCP/Azure)
 
-Easily extensible for BI tools
+### 👨‍💻 Author
 
-📌 Future Improvements
-
-Add dbt transformations in Postgres
-
-Integrate Apache Superset / Power BI for visualization
-
-Deploy to cloud (AWS/GCP/Azure)
-
-👨‍💻 Author
-
-Hussnain
-Data Engineering Intern | Building scalable data pipelines
+** Hussnain
+- Data Engineering Intern | Building scalable data pipelines
 
 
 
