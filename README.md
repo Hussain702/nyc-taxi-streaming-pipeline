@@ -25,3 +25,11 @@ flowchart TD
     B --> C["PyFlink\nStream Processing"]
     C --> D["PostgreSQL\nTaxi Events Table"]
     D --> E["BI / Analytics Tools"]
+
+
+
+
+👨‍💻 Author
+
+Hussnain
+Data Engineering Intern | Building scalable data pipelines
