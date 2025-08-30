@@ -25,6 +25,16 @@ This project simulates a **real-time streaming pipeline**:
 - **Python** – Data producer & ETL logic  
 
 ---
+## 🏗️ Architecture
+
+```mermaid
+flowchart TD
+    A["NYC Taxi Data\n(CSV / Parquet)"] -->|Producer.py| B[Kafka]
+    B --> C["PyFlink\nStream Processing"]
+    C --> D["PostgreSQL\nTaxi Events Table"]
+    D --> E["BI / Analytics Tools"]
+
+```
 
 ## 🚀 Getting Started
 
@@ -85,8 +95,11 @@ nyc-taxi-streaming-pipeline/
 
 ### 👨‍💻 Author
 
-** Hussnain
-- Data Engineering Intern | Building scalable data pipelines
+** Hussnain **
+Data Engineering Intern | Building scalable data pipelines
+
+
+
 
 
 
