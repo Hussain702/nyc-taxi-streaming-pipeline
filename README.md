@@ -32,7 +32,7 @@ This project simulates a **real-time streaming pipeline**:
 ```bash
 git clone https://github.com/your-username/nyc-taxi-streaming-pipeline.git
 cd nyc-taxi-streaming-pipeline
-
+  end
 
 ## 🏗️ Architecture
 
