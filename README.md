@@ -17,6 +17,23 @@ This project simulates a **real-time streaming pipeline**:
 
 ---
 
+## ⚙️ Tech Stack
+- **Apache Kafka** – Event streaming platform  
+- **Apache Flink (PyFlink)** – Real-time stream processing  
+- **PostgreSQL** – Analytical database  
+- **Docker Compose** – Container orchestration  
+- **Python** – Data producer & ETL logic  
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/your-username/nyc-taxi-streaming-pipeline.git
+cd nyc-taxi-streaming-pipeline
+
+
 ## 🏗️ Architecture
 
 ```mermaid
@@ -29,7 +46,4 @@ flowchart TD
 
 
 
-👨‍💻 Author
 
-Hussnain
-Data Engineering Intern | Building scalable data pipelines
