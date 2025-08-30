@@ -96,7 +96,7 @@ nyc-taxi-streaming-pipeline/
 ### 👨‍💻 Author
 
 **Hussnain**
-Data Engineering Intern | Building scalable data pipelines
+(Data Engineering Intern | Building scalable data pipelines)
 
 
 
