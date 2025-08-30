@@ -21,8 +21,7 @@ This project simulates a **real-time streaming pipeline**:
 
 ```mermaid
 flowchart TD
-    A[NYC Taxi Data<br>(CSV / Parquet)] -->|Producer.py| B[Kafka]
-    B --> C[PyFlink<br>Stream Processing]
-    C --> D[PostgreSQL<br>Taxi Events Table]
-    D --> E[BI / Analytics Tools]
-**
+    A["NYC Taxi Data\n(CSV / Parquet)"] -->|Producer.py| B[Kafka]
+    B --> C["PyFlink\nStream Processing"]
+    C --> D["PostgreSQL\nTaxi Events Table"]
+    D --> E["BI / Analytics Tools"]
